@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#050505">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Зал">
+<link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAYAAAA9zQYyAAADlUlEQVR42u3dQW7iQBBAUdPCJwlSjsAqp8+KI0QiZ8msGFmjhJCJu7u6+r3VLFhg+1MqA0MO67p+LJBEcQoQNAgaBA2CRtAgaBA0CBoEjaBB0CBoqOE4+gGczy+u4s4ul9dhn/thtK+PCljgwwd9L+Lr9U1xOzudnoeNO2zQX0Us4DiBR4w7XNCfhSzi2HFHCjtM0P+GLOLx4o4QdoigtzELeeywe0fdNWhT2bROE7SpbFrXUMTMnrbXs8dnBk0ntJBN6zQTWsymdZqgxSzqVlEXMZMp6tLjoJg76mGDvr0axcy2g5pTuoiZTFGXmjFD605Ki1cjtOqi1HrViZkeq0epETP06qbUfPVB607K3q8yMdNz9fC7HKSyS9CmM1GmtAmNCQ1pg7ZuEGntMKExoSFl0NYNoq0dJjQmNAgaIgdtfybiHm1CY0KDoEHQIGgEDYIGQYOgQdAIGgQNgoYqjjMc5Pv79dvHPD2dHKcJneMi/+RxjlPQ4S/y6Bd7luOcOuj/vWijXexZjtOEZkqCRtAgaGhgiPeh793AZH9f1flOFPQjd+K3xwjb+bZyYIeONC1+83hynm8TGhMaBA2CBkEjaBA0CBoEDYJmRqn+1/deH8fO8jF6xuM0oRE0CBoEDYJG0CBoEDQIGgSNoEHQEEeqLydtf83nN1+8GelXmPY6zixfVDKhsXKAoEHQIGgEDYIGQYOgQdAIOpCffvzsjwY53yY06YT+ctJtCvg7hc53iqBF63xbOXBTCIIGQYOgm97YjHZDNMtxmtDLPB/O+BBqopXj0Ys3+kWe5Ti/c1wmMMv72N6vd1OIoEHQIGgQNIIGQYOgQdAgaAQNggZBQ7SgL5fXZVmW5XR6dhbZza2nW18mNCY0CBqyBW2PJtL+bEJjQkPqoK0dRFk3TGhMaEgftLWDCOuGCY0JbUoTdTpXm9Ciplcnuwa916uMuezZTan15ExpWq4aTW4KRU3rLqoEbfWgVyel9pM1pWmxajRZOURNy5irB22fpvX1rx709tUoajHXvr9qMqFFLeZWbxY0WzlELeYWDuu6frQ+0PP55e+/r9c3V17I401o01rMaSf0Z5PatM4Tcq+YuwdtBTGVUwZtWpvK6YL+Kmxxx444Sshhg74XtrjjRBwt5PBBPxK3wNsGHDXi4YJ+NG7qGOnrwMMFLXABpw4atvwuB4IGQYOgQdAIGgQNggZBg6ARNAga4vgDYnGK+EsnTA0AAAAASUVORK5CYII=">
+<link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAYAAAA9zQYyAAADlUlEQVR42u3dQW7iQBBAUdPCJwlSjsAqp8+KI0QiZ8msGFmjhJCJu7u6+r3VLFhg+1MqA0MO67p+LJBEcQoQNAgaBA2CRtAgaBA0CBoEjaBB0CBoqOE4+gGczy+u4s4ul9dhn/thtK+PCljgwwd9L+Lr9U1xOzudnoeNO2zQX0Us4DiBR4w7XNCfhSzi2HFHCjtM0P+GLOLx4o4QdoigtzELeeywe0fdNWhT2bROE7SpbFrXUMTMnrbXs8dnBk0ntJBN6zQTWsymdZqgxSzqVlEXMZMp6tLjoJg76mGDvr0axcy2g5pTuoiZTFGXmjFD605Ki1cjtOqi1HrViZkeq0epETP06qbUfPVB607K3q8yMdNz9fC7HKSyS9CmM1GmtAmNCQ1pg7ZuEGntMKExoSFl0NYNoq0dJjQmNAgaIgdtfybiHm1CY0KDoEHQIGgEDYIGQYOgQdAIGgQNgoYqjjMc5Pv79dvHPD2dHKcJneMi/+RxjlPQ4S/y6Bd7luOcOuj/vWijXexZjtOEZkqCRtAgaGhgiPeh793AZH9f1flOFPQjd+K3xwjb+bZyYIeONC1+83hynm8TGhMaBA2CBkEjaBA0CBoEDYJmRqn+1/deH8fO8jF6xuM0oRE0CBoEDYJG0CBoEDQIGgSNoEHQEEeqLydtf83nN1+8GelXmPY6zixfVDKhsXKAoEHQIGgEDYIGQYOgQdAIOpCffvzsjwY53yY06YT+ctJtCvg7hc53iqBF63xbOXBTCIIGQYOgm97YjHZDNMtxmtDLPB/O+BBqopXj0Ys3+kWe5Ti/c1wmMMv72N6vd1OIoEHQIGgQNIIGQYOgQdAgaAQNggZBQ7SgL5fXZVmW5XR6dhbZza2nW18mNCY0CBqyBW2PJtL+bEJjQkPqoK0dRFk3TGhMaEgftLWDCOuGCY0JbUoTdTpXm9Ciplcnuwa916uMuezZTan15ExpWq4aTW4KRU3rLqoEbfWgVyel9pM1pWmxajRZOURNy5irB22fpvX1rx709tUoajHXvr9qMqFFLeZWbxY0WzlELeYWDuu6frQ+0PP55e+/r9c3V17I401o01rMaSf0Z5PatM4Tcq+YuwdtBTGVUwZtWpvK6YL+Kmxxx444Sshhg74XtrjjRBwt5PBBPxK3wNsGHDXi4YJ+NG7qGOnrwMMFLXABpw4atvwuB4IGQYOgQdAIGgQNggZBg6ARNAga4vgDYnGK+EsnTA0AAAAASUVORK5CYII=">
+<link rel="manifest" href="data:application/manifest+json;base64,eyJuYW1lIjogItCX0LDQuyIsICJzaG9ydF9uYW1lIjogItCX0LDQuyIsICJzdGFydF91cmwiOiAiLiIsICJkaXNwbGF5IjogInN0YW5kYWxvbmUiLCAiYmFja2dyb3VuZF9jb2xvciI6ICIjMDUwNTA1IiwgInRoZW1lX2NvbG9yIjogIiMwNTA1MDUiLCAiaWNvbnMiOiBbeyJzcmMiOiAiZGF0YTppbWFnZS9wbmc7YmFzZTY0LGlWQk9SdzBLR2dvQUFBQU5TVWhFVWdBQUFMUUFBQUMwQ0FZQUFBQTl6UVl5QUFBRGxVbEVRVlI0MnUzZFFXN2lRQkJBVWRQQ0p3bFNqc0FxcDgrS0kwUWlaOG1zR0ZtamhKQ0p1N3U2K3IzVkxGaGcrMU1xQTBNTzY3cCtMSkJFY1FvUU5BZ2FCQTJDUnRBZ2FCQTBDQm9FamFCQjBDQm9xT0U0K2dHY3p5K3U0czR1bDlkaG4vdGh0SytQQ2xqZ3d3ZDlMK0xyOVUxeE96dWRub2VOTzJ6UVgwVXM0RGlCUjR3N1hOQ2ZoU3ppMkhGSENqdE0wUCtHTE9MeDRvNFFkb2lndHpFTGVleXdlMGZkTldoVDJiUk9FN1NwYkZyWFVNVE1ucmJYczhkbkJrMG50SkJONnpRVFdzeW1kWnFneFN6cVZsRVhNWk1wNnRMam9KZzc2bUdEdnIwYXhjeTJnNXBUdW9pWlRGR1htakZENjA1S2kxY2p0T3FpMUhyVmlaa2VxMGVwRVRQMDZxYlVmUFZCNjA3SzNxOHlNZE56OWZDN0hLU3lTOUNtTTFHbXRBbU5DUTFwZzdadUVHbnRNS0V4b1NGbDBOWU5vcTBkSmpRbU5BZ2FJZ2R0ZnliaUhtMUNZMEtEb0VIUUlHZ0VEWUlHUVlPZ1FkQUlHZ1FOZ29ZcWpqTWM1UHY3OWR2SFBEMmRIS2NKbmVNaS8rUnhqbFBRNFMveTZCZDdsdU9jT3VqL3ZXaWpYZXhaanRPRVprcUNSdEFnYUdoZ2lQZWg3OTNBWkg5ZjFmbE9GUFFqZCtLM3h3amIrYlp5WUllT05DMSs4M2h5bm04VEdoTWFCQTJDQmtFamFCQTBDQm9FRFlKbVJxbisxL2RlSDhmTzhqRjZ4dU0wb1JFMENCb0VEWUpHMENCb0VEUUlHZ1NOb0VIUUVFZXFMeWR0Zjgzbk4xKzhHZWxYbVBZNnppeGZWREtoc1hLQW9FSFFJR2dFRFlJR1FZT2dRZEFJT3BDZmZ2enNqd1k1M3lZMDZZVCtjdEp0Q3ZnN2hjNTNpcUJGNjN4Yk9YQlRDSUlHUVlPZ205N1lqSFpETk10eG10RExQQi9PK0JCcW9wWGowWXMzK2tXZTVUaS9jMXdtTU12NzJONnZkMU9Jb0VIUUlHZ1FOSUlHUVlPZ1FkQWdhQVFOZ2daQlE3U2dMNWZYWlZtVzVYUjZkaGJaemEyblcxOG1OQ1kwQ0JxeUJXMlBKdEwrYkVKalFrUHFvSzBkUkZrM1RHaE1hRWdmdExXRENPdUdDWTBKYlVvVGRUcFhtOUNpcGxjbnV3YTkxNnVNdWV6WlRhbjE1RXhwV3E0YVRXNEtSVTNyTHFvRWJmV2dWeWVsOXBNMXBXbXhhalJaT1VSTnk1aXJCMjJmcHZYMXJ4NzA5dFVvYWpIWHZyOXFNcUZGTGVaV2J4WTBXemxFTGVZV0R1dTZmclErMFBQNTVlKy9yOWMzVjE3STQwMW8wMXJNYVNmMFo1UGF0TTRUY3ErWXV3ZHRCVEdWVXdadFdwdks2WUwrS214eHg0NDRTc2hoZzc0WHRyampSQnd0NVBCQlB4SzN3TnNHSERYaTRZSitORzdxR09ucndNTUZMWEFCcHc0YXR2d3VCNElHUVlPZ1FkQUlHZ1FOZ2daQmc2QVJOQWdhNHZnRFluR0srRXNuVEEwQUFBQUFTVVZPUks1Q1lJST0iLCAic2l6ZXMiOiAiMTgweDE4MCIsICJ0eXBlIjogImltYWdlL3BuZyJ9XX0=">
+<title>Зал</title>
+<style>
+:root{--bg1:#f4f4f6;--blob:rgba(255,255,255,.9);--blob2:rgba(150,150,160,.35);--ink:#0b0b0c;--mute:rgba(11,11,12,.56);--glass:rgba(255,255,255,.55);--edge:rgba(255,255,255,.85);--line:rgba(0,0,0,.09);--shadow:0 10px 40px rgba(0,0,0,.08);--on:#0b0b0c;--onink:#fff;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root{--bg1:#050505;--blob:rgba(255,255,255,.10);--blob2:rgba(120,120,130,.18);--ink:#f5f5f7;--mute:rgba(245,245,247,.55);--glass:rgba(255,255,255,.07);--edge:rgba(255,255,255,.18);--line:rgba(255,255,255,.10);--shadow:0 10px 40px rgba(0,0,0,.5);--on:#f5f5f7;--onink:#0b0b0c}}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0}
+body{min-height:100vh;color:var(--ink);background:var(--bg1);font:16px/1.45 -apple-system,BlinkMacSystemFont,"SF Pro Text","Inter","Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased;position:relative;overflow-x:hidden}
+body::before,body::after{content:"";position:fixed;z-index:0;border-radius:50%;filter:blur(60px);pointer-events:none}
+body::before{width:70vmax;height:70vmax;left:-25vmax;top:-20vmax;background:radial-gradient(circle,var(--blob),transparent 65%)}
+body::after{width:60vmax;height:60vmax;right:-25vmax;bottom:-15vmax;background:radial-gradient(circle,var(--blob2),transparent 65%)}
+main{position:relative;z-index:1;max-width:640px;margin:0 auto;padding:18px 14px 150px}
+.glass{background:var(--glass);border:1px solid var(--edge);border-radius:26px;-webkit-backdrop-filter:blur(26px) saturate(170%);backdrop-filter:blur(26px) saturate(170%);box-shadow:var(--shadow),inset 0 1px 0 var(--edge);margin-bottom:14px}
+.top{padding:22px}
+.top h1{margin:0;font-size:15px;font-weight:600;color:var(--mute)}
+.big{font-size:56px;font-weight:700;letter-spacing:-.04em;line-height:1;margin:8px 0 2px;font-variant-numeric:tabular-nums}
+.big small{font-size:22px;font-weight:500;color:var(--mute);letter-spacing:-.01em}
+.top p{margin:6px 0 0;color:var(--mute);font-size:15px}
+.bar{height:6px;border-radius:6px;background:var(--line);overflow:hidden;margin-top:14px}
+.bar i{display:block;height:100%;background:var(--on);border-radius:6px;transition:width .3s}
+.chd{display:flex;align-items:center;justify-content:space-between;padding:14px 12px 4px 18px}
+.chd h2{margin:0;font-size:18px;text-transform:capitalize}
+.pill{font:inherit;font-size:14px;font-weight:600;color:var(--ink);background:transparent;border:1px solid var(--line);border-radius:999px;padding:7px 14px;cursor:pointer;min-width:44px}
+.cal{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;padding:6px 10px 10px}
+.wd{font-size:12px;color:var(--mute);text-align:center;padding:4px 0}
+.day{font:inherit;font-size:14px;aspect-ratio:1/1.05;border:1px solid transparent;border-radius:14px;background:transparent;color:var(--ink);display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;padding:0}
+.day i{font-style:normal;font-size:11px;font-weight:700;line-height:1.1}
+.day.f{border-color:var(--line)}.day.g{background:rgba(48,209,88,.28)}.day.d{background:rgba(48,209,88,.12)}.day.p{background:rgba(255,204,0,.28)}.day.r{background:rgba(255,69,58,.28)}
+.day.t{border-color:var(--on)}.day.s{outline:2px solid var(--on)}
+.e{visibility:hidden}
+.legend{padding:0 18px 14px;font-size:13px;color:var(--mute)}
+h2.h{margin:0;padding:18px 18px 4px;font-size:20px;font-weight:650;letter-spacing:-.015em}
+.sub{padding:0 18px 8px;font-size:14px;color:var(--mute)}
+.ex{padding:14px 18px;position:relative}
+.ex+.ex::before{content:"";position:absolute;left:18px;right:18px;top:0;height:1px;background:var(--line)}
+.exh{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}
+.exh b{font-weight:600}.exh span{display:block;font-size:14px;color:var(--mute)}
+.sets{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px;align-items:center}
+.sb{font:inherit;font-size:15px;font-weight:700;width:44px;height:44px;border-radius:50%;border:1.5px solid var(--mute);background:transparent;color:var(--ink);cursor:pointer;padding:0}
+.sb[aria-pressed="true"]{background:var(--on);border-color:var(--on);color:var(--onink)}
+.kg{font:inherit;font-size:16px;width:84px;padding:9px 10px;color:var(--ink);background:transparent;border:1px solid var(--line);border-radius:12px;text-align:right}
+.lw{font-size:12px;color:var(--mute);text-align:right;margin-top:2px}
+button:focus-visible,input:focus-visible{outline:2px solid var(--on);outline-offset:2px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;padding:6px 18px 12px}
+.chips button{font:inherit;font-size:14px;font-weight:600;color:var(--ink);background:transparent;border:1px solid var(--line);border-radius:999px;padding:8px 14px;cursor:pointer}
+.chips button[aria-pressed="true"]{background:var(--on);color:var(--onink);border-color:var(--on)}
+.rest{padding:6px 18px 18px;color:var(--mute)}
+.sec{padding:12px 18px 2px;font-size:14px;font-weight:600;color:var(--mute)}
+.lr{display:flex;align-items:center;gap:8px;padding:8px 18px}
+.lr span{flex:1}.lr small{color:var(--mute)}
+.lr button{font:inherit;font-size:14px;color:var(--ink);background:transparent;border:1px solid var(--line);border-radius:10px;padding:4px 10px;cursor:pointer;min-width:36px}
+.fld{font:inherit;font-size:16px;padding:10px 12px;color:var(--ink);background:transparent;border:1px solid var(--line);border-radius:14px;min-width:0}
+.frm{display:flex;gap:8px;padding:6px 18px 12px;flex-wrap:wrap}
+.btn{font:inherit;font-size:15px;font-weight:600;background:var(--on);color:var(--onink);border:0;border-radius:999px;padding:11px 18px;cursor:pointer}
+details.lib{margin:4px 18px 14px;border:1px solid var(--line);border-radius:14px;padding:0 12px}
+details.lib summary{cursor:pointer;padding:12px 0;font-size:15px;font-weight:600;color:var(--mute);list-style:none}
+details.lib summary::-webkit-details-marker{display:none}
+details.lib .sec{padding:8px 0 2px}.details.lib .chips{padding:6px 0 8px}
+details.lib .chips{padding:6px 0 8px}
+.tmb{position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom,0px));z-index:20;max-width:616px;margin:0 auto;padding:12px 16px 14px}
+.tmb .r1{display:flex;align-items:baseline;justify-content:space-between}
+.tmb b{font-size:34px;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.tmb .r1 span{font-size:14px;color:var(--mute)}
+.tmb .r2{display:flex;gap:8px;margin-top:10px}
+.tmb .pill{flex:1}
+.inf{margin-top:12px;padding:4px 14px 14px;border:1px solid var(--line);border-radius:14px;font-size:14px;line-height:1.5}
+.inf h4{margin:12px 0 4px;font-size:13px;font-weight:600;color:var(--mute)}
+.inf p{margin:2px 0}.inf ol,.inf ul{margin:2px 0;padding-left:20px}.inf li{margin:2px 0}
+.inf .warn{margin-top:12px;color:var(--mute)}
+.inf a{display:inline-block;margin-top:8px;color:var(--ink);font-weight:600}
+[hidden]{display:none!important}
+</style>
+</head>
+<body>
+<main>
+<div class="glass top"><h1>Зал · эта неделя</h1><div class="big"><span id="wk">0</span> <small>из <span id="wt">0</span></small></div><div class="bar"><i id="wb" style="width:0"></i></div><p id="tot"></p></div>
+<section class="glass" id="cal"></section>
+<section class="glass" id="day"></section>
+<section class="glass" id="rest"></section>
+<section class="glass" id="exs"></section>
+<section class="glass" id="set"></section>
+</main>
+<div class="glass tmb" id="tm" hidden><div class="r1"><b id="tmt">0:00</b><span id="tml">отдых</span></div><div class="bar"><i id="tmp" style="width:0"></i></div><div class="r2"><button class="pill" id="tmm" type="button">−15 с</button><button class="pill" id="tmpl" type="button">+15 с</button><button class="pill" id="tmx" type="button">Стоп</button></div></div>
+<script>
+var LIB={"Ноги":[["Жим ногами","3","10–12"],["Приседания со штангой","3","8–10"],["Гоблет-приседания","3","10–12"],["Выпады с гантелями","3","10"],["Сгибания ног лёжа","3","10–12"],["Разгибания ног в тренажёре","3","12"],["Подъёмы на носки","3","12–15"]],
+"Грудь":[["Жим лёжа","3","8–10"],["Жим гантелей на наклонной скамье","3","8–10"],["Сведение рук в кроссовере","3","12"],["Отжимания на брусьях","3","8–10"]],
+"Спина":[["Тяга верхнего блока","3","8–12"],["Тяга горизонтального блока","3","8–12"],["Тяга гантели в наклоне","3","10"],["Подтягивания","3","6–8"],["Гиперэкстензия","3","12"]],
+"Плечи":[["Жим плечами сидя","3","8–12"],["Разведения гантелей в стороны","3","12–15"],["Тяга к лицу","3","12–15"],["Шраги для трапеций","3","12"]],
+"Руки":[["Сгибания на бицепс","3","10–12"],["Молотки","3","10–12"],["Разгибания на трицепс на блоке","3","10–12"],["Французский жим","3","10"]],
+"Пресс":[["Скручивания","3","15"],["Подъём ног в висе","3","10"]]};
+function defW(){var n=0;function e(a){return{id:"e"+(++n),n:a[0],s:+a[1],r:a[2]}}
+ return{A:[["Жим лёжа","3","8–10"],["Тяга верхнего блока","3","8–12"],["Жим плечами сидя","3","8–12"],["Сгибания на бицепс","3","10–12"]].map(e),
+ B:[["Жим гантелей на наклонной скамье","3","8–10"],["Тяга горизонтального блока","3","8–12"],["Разведения гантелей в стороны","3","12–15"],["Разгибания на трицепс на блоке","3","10–12"],["Шраги для трапеций","3","12"]].map(e)}}
+var WU={id:"wu",n:"Разминка",s:1,r:"5–10 минут"},DN=["Вс","Пн","Вт","Ср","Чт","Пт","Сб"],KEY="gym-v1",MEM=null;
+var S=null,SYNC={col:null,ok:false},DIRTY={},PT=null,CFGK=["v","days","wk","start","rest","auto","w","over","flipFrom","sched","sets3","addA1"];
+var SEED_GYM={"v": 2, "days": [2, 4], "wk": true, "start": "2026-11-09", "flipFrom": "2026-11-16", "over": {"2026-11-10": "B", "2026-11-12": "A"}, "rest": 90, "auto": true, "sched": 2, "sets3": 1, "addA1": 1, "w": {"A": [{"id": "e1", "n": "Жим лёжа", "s": 3, "r": "8–10"}, {"id": "e2", "n": "Тяга верхнего блока", "s": 3, "r": "8–12"}, {"id": "e3", "n": "Жим плечами сидя", "s": 3, "r": "8–12"}, {"id": "emwezy84bech", "n": "Тяга к лицу", "s": 3, "r": "12–15"}, {"id": "e4", "n": "Сгибания на бицепс", "s": 3, "r": "10–12"}, {"id": "emwezy84bhtf", "n": "Скручивания", "s": 3, "r": "15"}], "B": [{"id": "e5", "n": "Жим гантелей на наклонной скамье", "s": 3, "r": "8–10"}, {"id": "e6", "n": "Тяга горизонтального блока", "s": 3, "r": "8–12"}, {"id": "e7", "n": "Разведения гантелей в стороны", "s": 3, "r": "12–15"}, {"id": "e8", "n": "Разгибания на трицепс на блоке", "s": 3, "r": "10–12"}, {"id": "e9", "n": "Шраги для трапеций", "s": 3, "r": "12"}]}, "log": {}};
+try{S=JSON.parse(localStorage.getItem(KEY)||"null");if(!S){S=SEED_GYM;localStorage.setItem(KEY,JSON.stringify(S))}}catch(e){S=SEED_GYM}
+function $(i){return document.getElementById(i)}
+function el(t,c,x){var e=document.createElement(t);if(c)e.className=c;if(x!==undefined)e.textContent=x;return e}
+function two(n){return n<10?"0"+n:""+n}
+function ds(d){return d.getFullYear()+"-"+two(d.getMonth()+1)+"-"+two(d.getDate())}
+function pd(s){var p=s.split("-");return new Date(+p[0],+p[1]-1,+p[2])}
+/* migrate the first version (exercises by position, Mon/Wed/Fri) */
+if(!S||!S.log)S={log:{}};
+if(!S.v){
+  var oldDays=S.days||[1,3,5],start=S.start||"2026-11-09",W0=defW(),nl={};
+  function oldType(s){var d=pd(s),a=pd(start);if(d<a||oldDays.indexOf(d.getDay())<0)return null;var n=0,x=new Date(a);while(x<d){if(oldDays.indexOf(x.getDay())>-1)n++;x.setDate(x.getDate()+1)}return n%2===0?"A":"B"}
+  Object.keys(S.log).forEach(function(s){var t=oldType(s),l=S.log[s];if(!t||!l)return;var o={t:{},w:{}},ids=W0[t];
+    Object.keys(l.t||{}).forEach(function(i){i=+i;if(i===0)o.t.wu=1;else if(ids[i-1])o.t[ids[i-1].id]=ids[i-1].s});
+    Object.keys(l.w||{}).forEach(function(i){i=+i;if(ids[i-1])o.w[ids[i-1].id]=l.w[i]});nl[s]=o});
+  S={v:2,days:[2,4],wk:true,start:start,rest:90,auto:true,w:W0,log:nl};
+}
+if(!S.w)S.w=defW();
+if(S.sets3!==1){
+  var oldS={};["A","B"].forEach(function(k){(S.w[k]||[]).forEach(function(it){oldS[it.id]=it.s;if(it.s<3)it.s=3})});
+  Object.keys(S.log).forEach(function(d){var l=S.log[d];if(!l||!l.t)return;Object.keys(l.t).forEach(function(id){if(oldS[id]!==undefined&&oldS[id]<3&&l.t[id]>=oldS[id])l.t[id]=3})});
+  S.sets3=1}
+if(S.addA1!==1){
+  var A=S.w.A,has=function(n){return A.some(function(x){return x.n===n})};
+  var mk=function(n,s,r){return{id:"e"+Date.now().toString(36)+Math.random().toString(36).slice(2,5),n:n,s:s,r:r}};
+  var after=function(name,item){var i=-1;A.forEach(function(x,k){if(x.n===name)i=k});if(i>-1)A.splice(i+1,0,item);else A.push(item)};
+  if(!has("Тяга верхнего блока"))after("Жим лёжа",mk("Тяга верхнего блока",3,"8–12"));
+  if(!has("Тяга к лицу"))after("Жим плечами сидя",mk("Тяга к лицу",3,"12–15"));
+  if(!has("Скручивания"))A.push(mk("Скручивания",3,"15"));
+  S.addA1=1}
+if(S.sched!==2){S.over={"2026-11-10":"B","2026-11-12":"A"};S.flipFrom="2026-11-16";S.sched=2}
+function save(d){MEM=S;try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}queue(d||null)}
+function hasData(d){var l=S.log[d];return!!l&&((l.t&&Object.keys(l.t).length>0)||(l.w&&Object.keys(l.w).length>0))}
+function noop(){}
+function cfgOf(){var c={};CFGK.forEach(function(k){if(S[k]!==undefined)c[k]=S[k]});return c}
+function pushNow(){
+  if(!SYNC.col)return;
+  SYNC.col.doc("gym_cfg").set(cfgOf()).catch(noop);
+  Object.keys(DIRTY).forEach(function(d){SYNC.col.doc("gym_d_"+d).set(S.log[d]||{t:{},w:{}}).catch(noop)});
+  DIRTY={}}
+function queue(d){if(d&&S.log&&S.log[d])DIRTY[d]=1;clearTimeout(PT);PT=setTimeout(pushNow,500)}
+var TODAY=ds(new Date()),CM=new Date(),SEL=null;CM.setDate(1);
+function slotOf(s){var d=pd(s);if(S.wk&&d.getDay()===0){d.setDate(d.getDate()-1)}return d}
+function isDay(d){var w=d.getDay();return S.days.indexOf(w)>-1||(S.wk&&(w===6||w===0))}
+function baseType(s){
+  var d=pd(s),a=pd(S.start);if(d<a||!isDay(d))return null;
+  var sd=slotOf(s),n=0,x=new Date(a);
+  while(x<sd){var w=x.getDay();if(S.days.indexOf(w)>-1||(S.wk&&w===6))n++;x.setDate(x.getDate()+1)}
+  if(S.flipFrom&&sd>=pd(S.flipFrom))n++;
+  return n%2===0?"A":"B"}
+function typeOf(s){var b=baseType(s);return b?((S.over&&S.over[s])||b):null}
+function items(t){return [WU].concat(S.w[t]||[])}
+function got(l,it){var v=l&&l.t?l.t[it.id]||0:0;return Math.min(v,it.s)}
+function cnt(s){var t=typeOf(s);if(!t)return[0,0];var l=S.log[s],k=0,n=0;items(t).forEach(function(it){n+=it.s;k+=got(l,it)});return[k,n]}
+function full(s){var c=cnt(s);return c[1]>0&&c[0]>=c[1]}
+function otherWk(s){var d=pd(s),w=d.getDay();if(!S.wk||(w!==6&&w!==0))return null;d.setDate(d.getDate()+(w===6?1:-1));return ds(d)}
+function stat(s){
+  var t=typeOf(s);if(!t)return null;var c=cnt(s),o=otherWk(s);
+  if(c[1]>0&&c[0]>=c[1])return"g";
+  if(o&&full(o))return"d";
+  if(c[0]>0)return"p";
+  var last=o&&pd(s).getDay()===6?o:s;
+  return last<TODAY?"r":"f"}
+function nextTraining(){var d=new Date();for(var i=0;i<14;i++){var s=ds(d);if(typeOf(s)&&s>=TODAY)return s;d.setDate(d.getDate()+1)}return TODAY}
+SEL=typeOf(TODAY)?TODAY:nextTraining();
+function lastW(id,s){var ks=Object.keys(S.log).filter(function(k){return k<s&&S.log[k].w&&S.log[k].w[id]}).sort();return ks.length?S.log[ks[ks.length-1]].w[id]:null}
+
+/* rest timer */
+var TM={end:0,total:0,iv:null,fin:false,ac:null};
+function beep(){try{var c=TM.ac;if(c){[0,.25,.5].forEach(function(t){var o=c.createOscillator(),g=c.createGain();o.frequency.value=880;g.gain.value=.18;o.connect(g);g.connect(c.destination);o.start(c.currentTime+t);o.stop(c.currentTime+t+.15)})}}catch(e){}try{if(navigator.vibrate)navigator.vibrate([250,120,250])}catch(e){}}
+function fmt(n){return Math.floor(n/60)+":"+two(n%60)}
+function tick(){
+  var left=Math.max(0,Math.round((TM.end-Date.now())/1000));
+  $("tmt").textContent=fmt(left);$("tmp").style.width=(TM.total?Math.min(100,(TM.total-left)/TM.total*100):0)+"%";
+  $("tml").textContent=left?"отдых":"отдых закончен";
+  if(!left&&!TM.fin){TM.fin=true;clearInterval(TM.iv);beep();setTimeout(function(){if(TM.fin)$("tm").hidden=true},6000)}}
+function startTimer(sec){
+  try{if(!TM.ac)TM.ac=new(window.AudioContext||window.webkitAudioContext)();if(TM.ac.resume)TM.ac.resume()}catch(e){}
+  TM.total=sec;TM.end=Date.now()+sec*1000;TM.fin=false;clearInterval(TM.iv);TM.iv=setInterval(tick,250);$("tm").hidden=false;tick()}
+$("tmm").onclick=function(){TM.end-=15000;TM.fin=false;if(Date.now()<TM.end){clearInterval(TM.iv);TM.iv=setInterval(tick,250)}tick()};
+$("tmpl").onclick=function(){TM.end+=15000;TM.total+=15;TM.fin=false;clearInterval(TM.iv);TM.iv=setInterval(tick,250);tick()};
+$("tmx").onclick=function(){clearInterval(TM.iv);TM.fin=false;$("tm").hidden=true};
+
+function rTop(){
+  var d=new Date(),dow=(d.getDay()+6)%7,m=new Date(d);m.setDate(d.getDate()-dow);
+  var tot=0,done=0,i,seenWk=false;
+  for(i=0;i<7;i++){var s=ds(m),w=m.getDay();
+    if(typeOf(s)){
+      if(S.wk&&(w===6||w===0)){if(!seenWk){seenWk=true;tot++;var o=otherWk(s);if(stat(s)==="g"||stat(o)==="g")done++}}
+      else{tot++;if(stat(s)==="g")done++}}
+    m.setDate(m.getDate()+1)}
+  $("wk").textContent=done;$("wt").textContent=tot;$("wb").style.width=(tot?done/tot*100:0)+"%";
+  var all=0,seen={};Object.keys(S.log).forEach(function(s){if(stat(s)==="g"){var k=slotOf(s)&&ds(slotOf(s));if(!seen[k]){seen[k]=1;all++}}});
+  $("tot").textContent="Всего тренировок выполнено: "+all}
+
+function rCal(){
+  var b=$("cal");b.innerHTML="";var y=CM.getFullYear(),mo=CM.getMonth();
+  var h=el("div","chd"),pv=el("button","pill","‹"),nx=el("button","pill","›");pv.type=nx.type="button";
+  pv.setAttribute("aria-label","Прошлый месяц");nx.setAttribute("aria-label","Следующий месяц");
+  pv.onclick=function(){CM=new Date(y,mo-1,1);rCal()};nx.onclick=function(){CM=new Date(y,mo+1,1);rCal()};
+  var mid=el("div");mid.style.cssText="display:flex;gap:6px";mid.appendChild(pv);mid.appendChild(nx);
+  h.appendChild(el("h2",null,CM.toLocaleDateString("ru-RU",{month:"long",year:"numeric"})));h.appendChild(mid);b.appendChild(h);
+  var g=el("div","cal");["Пн","Вт","Ср","Чт","Пт","Сб","Вс"].forEach(function(w){g.appendChild(el("div","wd",w))});
+  var off=(new Date(y,mo,1).getDay()+6)%7,nd=new Date(y,mo+1,0).getDate(),i;
+  for(i=0;i<off;i++)g.appendChild(el("div","e"));
+  for(i=1;i<=nd;i++)(function(n){
+    var s=y+"-"+two(mo+1)+"-"+two(n),t=typeOf(s),st=stat(s);
+    var bt=el("button","day"+(st?" "+st:"")+(s===TODAY?" t":"")+(s===SEL?" s":""));bt.type="button";bt.appendChild(document.createTextNode(String(n)));
+    if(t)bt.appendChild(el("i",null,t==="A"?"А":"Б"));
+    bt.onclick=function(){SEL=s;rCal();rDay()};g.appendChild(bt)})(i);
+  b.appendChild(g);
+  b.appendChild(el("div","legend","Зелёный: всё сделано. Бледно-зелёный: сделано в другой день выходных. Жёлтый: частично. Красный: пропущено. С рамкой: впереди."))}
+
+var INFO={"Жим лёжа": {"e": "Скамья со стойками и штанга. Лёжа на скамье выжимаешь гриф от груди вверх. Лучше работать в раме со стопорами или со страховщиком.", "m": "грудные, передние дельты, трицепс", "s": ["Ляг так, чтобы глаза были под грифом. Сведи лопатки и прижми их к скамье, стопы плотно на полу.", "Хват чуть шире плеч. Сними гриф и держи его над грудью.", "Опусти гриф к нижней части груди, локти под углом около 45° к корпусу.", "Выжми вверх, не отрывая таз и затылок от скамьи."], "x": ["Отрыв таза от скамьи", "Локти строго в стороны под 90°", "Отбив грифа от груди"]}, "Жим гантелей на наклонной скамье": {"e": "Регулируемая скамья и две гантели. Скамью ставят под углом 30–45°, это смещает нагрузку на верх груди.", "m": "верх груди, передние дельты, трицепс", "s": ["Выставь скамью под 30° (не круче 45°). Сядь, гантели на бёдрах, ляг и подними их к груди.", "Выжми гантели вверх, чтобы они сошлись над грудью.", "Опусти до приятного растяжения груди, локти под углом около 45°.", "Не опускай слишком глубоко, если чувствуешь боль в плече."], "x": ["Слишком крутой угол: работают плечи, а не грудь", "Гантели слишком далеко друг от друга"]}, "Жим плечами сидя": {"e": "Скамья со спинкой и гантели (или тренажёр для жима плечами). Выжимаешь вес над головой.", "m": "дельты, трицепс", "s": ["Сядь, спина плотно прижата к спинке, пресс напряжён.", "Гантели на уровне ушей, локти чуть впереди корпуса.", "Выжми вверх почти до выпрямления рук.", "Медленно опусти до уровня ушей."], "x": ["Прогиб в пояснице", "Слишком тяжёлый вес и рывки"]}, "Тяга верхнего блока": {"e": "Блочный тренажёр: сверху блок с длинной рукоятью, внизу сиденье и валик для фиксации бёдер. Тянешь рукоять сверху вниз к груди.", "m": "широчайшие, середина спины, бицепс", "s": ["Зафиксируй бёдра под валиком. Хват шире плеч.", "Слегка отклонись назад и выкати грудь.", "Тяни рукоять к верху груди, сводя лопатки и опуская локти вниз.", "Медленно верни рукоять вверх до растяжения."], "x": ["Тяга за голову", "Раскачивание корпусом", "Тяга одними руками без работы лопаток"]}, "Тяга горизонтального блока": {"e": "Нижний блок: ты сидишь лицом к стойке, упираешься ногами в платформу и тянешь рукоять к животу.", "m": "середина спины, широчайшие, задние дельты, бицепс", "s": ["Сядь, ноги на упоры, колени слегка согнуты. Спина прямая.", "Тяни рукоять к низу живота, сводя лопатки.", "В конце сделай паузу на секунду.", "Верни рукоять медленно, не округляя спину."], "x": ["Сильный откид назад", "Круглая спина"]}, "Разведения гантелей в стороны": {"e": "Две лёгкие гантели. Поднимаешь руки в стороны до уровня плеч. Упражнение для средних дельт.", "m": "средние дельты", "s": ["Встань прямо, гантели вдоль тела, локти слегка согнуты.", "Подними гантели в стороны до уровня плеч, локти чуть выше кистей.", "Медленно опусти."], "x": ["Раскачка корпусом", "Слишком тяжёлые гантели", "Подъём выше плеч"]}, "Разгибания на трицепс на блоке": {"e": "Верхний блок с короткой рукоятью или канатом. Разгибаешь руки вниз.", "m": "трицепс", "s": ["Встань близко к блоку, локти прижми к корпусу.", "Разгибай руки вниз до полного выпрямления.", "Верни рукоять вверх до угла 90° в локтях."], "x": ["Локти уходят вперёд и в стороны", "Наклон корпуса и вес тела на рукоять"]}, "Шраги для трапеций": {"e": "Гантели или штанга. Поднимаешь плечи вверх к ушам.", "m": "верх трапеций", "s": ["Встань прямо, руки с весом вдоль тела.", "Подними плечи вверх, как будто тянешь их к ушам.", "Задержись на секунду и опусти."], "x": ["Вращение плечами", "Вытягивание головы вперёд"]}, "Сгибания на бицепс": {"e": "Гантели или штанга. Сгибаешь руки в локтях.", "m": "бицепс", "s": ["Встань прямо, локти прижаты к корпусу.", "Согни руки, ладони разворачиваются вверх.", "Медленно опусти почти до полного выпрямления."], "x": ["Раскачка корпусом", "Локти уходят вперёд"]}, "Жим ногами": {"e": "Тренажёр с наклонной платформой на салазках. Ты сидишь и выжимаешь платформу ногами.", "m": "квадрицепс, ягодицы, бицепс бедра", "s": ["Сядь, спина и таз плотно прижаты. Стопы на ширине плеч, на середине платформы.", "Сними фиксаторы и опусти платформу, пока колени не пойдут к груди.", "Выжми платформу, не разгибая колени до конца."], "x": ["Отрыв таза (округляется поясница)", "Полное разгибание коленей", "Колени внутрь"]}, "Приседания со штангой": {"e": "Силовая рама с грифом на верхней части спины. Начинать лучше с тренером или со страховкой.", "m": "квадрицепс, ягодицы, мышцы кора", "s": ["Гриф на верх спины, стопы чуть шире плеч, носки слегка наружу.", "Вдохни, напряги пресс.", "Садись, отводя таз назад, колени по линии стоп, до параллели с полом.", "Встань, отталкиваясь от пола."], "x": ["Колени внутрь", "Круглая спина", "Отрыв пяток"]}, "Гоблет-приседания": {"e": "Одна гантель или гиря, которую держишь двумя руками у груди. Лёгкий способ выучить технику приседа.", "m": "квадрицепс, ягодицы", "s": ["Держи вес у груди, локти вниз.", "Стопы чуть шире плеч.", "Присядь между коленями, спина прямая.", "Встань."], "x": ["Наклон вперёд", "Пятки отрываются от пола"]}, "Выпады с гантелями": {"e": "Две гантели в руках. Шагаешь вперёд и приседаешь на одной ноге.", "m": "квадрицепс, ягодицы", "s": ["Гантели вдоль тела, спина прямая.", "Шагни вперёд и опустись, пока оба колена не согнутся примерно до 90°.", "Оттолкнись передней ногой и вернись."], "x": ["Колено заваливается внутрь", "Слишком короткий шаг"]}, "Сгибания ног лёжа": {"e": "Тренажёр, в котором лежишь на животе. Валик находится над пятками.", "m": "бицепс бедра", "s": ["Ляг, валик чуть выше пяток.", "Согни ноги, подтягивая пятки к ягодицам.", "Медленно опусти."], "x": ["Отрыв таза", "Рывки"]}, "Разгибания ног в тренажёре": {"e": "Сидячий тренажёр с валиком на голенях. Разгибаешь ноги вперёд.", "m": "квадрицепс", "s": ["Спина прижата к спинке, валик на голенях чуть выше стоп.", "Разогни ноги, задержись на секунду.", "Медленно опусти."], "x": ["Рывки", "Слишком тяжёлый вес (нагрузка на колени)"]}, "Подъёмы на носки": {"e": "Ступенька или платформа тренажёра. Поднимаешься на носки.", "m": "икры", "s": ["Встань носками на ступеньку, пятки в воздухе, держись за опору.", "Поднимись на носки как можно выше.", "Медленно опустись до растяжения."], "x": ["Короткая амплитуда", "Подпрыгивание"]}, "Сведение рук в кроссовере": {"e": "Два верхних блока с рукоятями. Сводишь руки перед грудью.", "m": "грудные", "s": ["Встань между блоками, один шаг вперёд.", "Руки слегка согнуты, сведи рукояти по дуге перед грудью.", "Верни с растяжением груди."], "x": ["Превращение в жим", "Раскачка корпусом"]}, "Отжимания на брусьях": {"e": "Параллельные брусья: упор на руках, опускаешься и выжимаешь себя вверх. Для новичка есть гравитрон с помощью.", "m": "грудные, трицепс, передние дельты", "s": ["Упор на прямых руках, корпус слегка наклонён вперёд.", "Опустись до угла в локтях около 90°.", "Выжми вверх."], "x": ["Слишком глубокое опускание (боль в плече)", "Раскачка"]}, "Тяга гантели в наклоне": {"e": "Гантель и скамья. Одна рука и колено опираются на скамью.", "m": "широчайшие, середина спины, бицепс", "s": ["Колено и ладонь на скамью, спина ровная.", "Тяни гантель к поясу, локоть вдоль корпуса.", "Опусти вниз."], "x": ["Поворот корпуса", "Тяга бицепсом вместо спины"]}, "Подтягивания": {"e": "Перекладина. Подтягиваешь себя подбородком выше перекладины. Новичкам помогает гравитрон или резина.", "m": "широчайшие, бицепс", "s": ["Хват чуть шире плеч, повисни на прямых руках.", "Сведи лопатки и подтянись, локти вниз.", "Опустись под контролем до полного выпрямления рук."], "x": ["Раскачка", "Неполная амплитуда вниз"]}, "Гиперэкстензия": {"e": "Скамья под углом с валиками для ног, туловище свисает вниз.", "m": "разгибатели спины, ягодицы", "s": ["Валик под тазом, ноги зафиксированы.", "Опусти корпус с прямой спиной.", "Подними до линии с ногами, не прогибаясь."], "x": ["Переразгибание в пояснице", "Рывки"]}, "Тяга к лицу": {"e": "Верхний блок с канатом на уровне лица. Тянешь канат к лицу.", "m": "задние дельты, верх спины", "s": ["Канат на уровне лица, шаг назад.", "Тяни канат к лицу, локти высоко и в стороны.", "Сведи лопатки и медленно верни."], "x": ["Слишком тяжёлый вес", "Откидывание корпуса"]}, "Молотки": {"e": "Гантели в нейтральном хвате (ладони смотрят друг на друга). Вариант сгибаний на бицепс.", "m": "бицепс, плечелучевая мышца", "s": ["Гантели вдоль тела, ладони друг к другу.", "Согни руки, не разворачивая запястья.", "Медленно опусти."], "x": ["Раскачка корпусом", "Локти уходят вперёд"]}, "Французский жим": {"e": "Лёжа на скамье, штанга или гантель над головой. Сгибаешь руки в локтях и разгибаешь.", "m": "трицепс", "s": ["Ляг, вес на прямых руках над грудью.", "Согни локти, опуская вес к лбу или за голову. Локти смотрят вверх.", "Разогни руки."], "x": ["Локти разъезжаются", "Слишком большой вес"]}, "Скручивания": {"e": "Упражнение на полу без оборудования.", "m": "прямая мышца живота", "s": ["Ляг, колени согнуты, руки у висков.", "Оторви лопатки, скручивая корпус.", "Медленно опустись."], "x": ["Тянуть голову руками", "Резкие рывки"]}, "Подъём ног в висе": {"e": "Перекладина или тренажёр для виса. Поднимаешь ноги в висе.", "m": "низ пресса, сгибатели бедра", "s": ["Повисни на перекладине без раскачки.", "Подними колени или прямые ноги до уровня таза.", "Медленно опусти."], "x": ["Раскачка", "Подъём за счёт инерции"]}, "Разминка": {"e": "Подготовка тела к нагрузке.", "m": "суставы и мышцы всего тела", "s": ["Пять минут лёгкого кардио (дорожка, велотренажёр).", "Круги плечами, наклоны, махи руками и ногами.", "Один-два лёгких подхода первого упражнения с малым весом."], "x": ["Пропускать разминку", "Делать разминку на усталость"]}},EO={};
+function infoBox(it){
+  var d=INFO[it.n],b=el("div","inf");
+  if(!d){b.appendChild(el("p",null,"Описания для этого упражнения пока нет."));
+    var a0=el("a",null,"Найти видео с техникой");a0.href="https://www.youtube.com/results?search_query="+encodeURIComponent(it.n+" техника выполнения");a0.target="_blank";a0.rel="noopener";b.appendChild(a0);return b}
+  function h(x){b.appendChild(el("h4",null,x))}
+  h("Что это");b.appendChild(el("p",null,d.e));
+  h("Какие мышцы работают");b.appendChild(el("p",null,d.m));
+  h("Как делать");var ol=el("ol");d.s.forEach(function(x){ol.appendChild(el("li",null,x))});b.appendChild(ol);
+  h("Частые ошибки");var ul=el("ul");d.x.forEach(function(x){ul.appendChild(el("li",null,x))});b.appendChild(ul);
+  b.appendChild(el("p","warn","Начни с лёгкого веса. Резкая боль в суставе означает стоп."));
+  var a=el("a",null,"Посмотреть технику на видео");a.href="https://www.youtube.com/results?search_query="+encodeURIComponent(it.n+" техника выполнения");a.target="_blank";a.rel="noopener";b.appendChild(a);
+  return b}
+function rDay(){
+  var b=$("day");b.innerHTML="";var t=typeOf(SEL),d=pd(SEL),title=d.toLocaleDateString("ru-RU",{weekday:"long",day:"numeric",month:"long"});
+  if(!t){b.appendChild(el("h2","h",title));b.appendChild(el("div","rest","День отдыха. Прогулка и сон тоже часть тренировки."));return}
+  b.appendChild(el("h2","h","Тренировка "+(t==="A"?"А":"Б")));
+  var wkTxt=S.wk&&(d.getDay()===6||d.getDay()===0)?" · можно в субботу или воскресенье":"";
+  b.appendChild(el("div","sub",title+wkTxt));
+  var oc=el("div","chips");
+  [["A","А"],["B","Б"]].forEach(function(o){var x=el("button",null,"Этот день: "+o[1]);x.type="button";x.setAttribute("aria-pressed",t===o[0]);
+    x.onclick=function(){S.over=S.over||{};if(o[0]===baseType(SEL))delete S.over[SEL];else S.over[SEL]=o[0];save();rTop();rCal();rDay()};oc.appendChild(x)});
+  b.appendChild(oc);
+  var l=S.log[SEL]=S.log[SEL]||{t:{},w:{}};
+  items(t).forEach(function(it){
+    var r=el("div","ex"),hd=el("div","exh"),tx=el("div");tx.appendChild(el("b",null,it.n));tx.appendChild(el("span",null,it.id==="wu"?it.r:it.s+" × "+it.r));
+    hd.appendChild(tx);
+    if(it.id!=="wu"){var w=el("div"),k=el("input","kg");k.type="number";k.inputMode="decimal";k.step="any";k.placeholder="кг";k.setAttribute("aria-label","Вес, кг: "+it.n);
+      if(l.w[it.id])k.value=l.w[it.id];k.oninput=function(){if(k.value==="")delete l.w[it.id];else l.w[it.id]=k.value;save(SEL)};w.appendChild(k);
+      var lw=lastW(it.id,SEL);if(lw)w.appendChild(el("div","lw","прошлый раз: "+lw+" кг"));hd.appendChild(w)}
+    r.appendChild(hd);
+    var sets=el("div","sets"),dn=got(l,it);
+    for(var i=1;i<=it.s;i++)(function(i){
+      var sb=el("button","sb",it.id==="wu"?"✓":String(i));sb.type="button";sb.setAttribute("aria-pressed",i<=dn);
+      sb.setAttribute("aria-label",it.id==="wu"?"Разминка выполнена":it.n+": подход "+i);
+      sb.onclick=function(){
+        var cur=got(l,it),nw=(cur===i)?i-1:i;
+        if(nw>0)l.t[it.id]=nw;else delete l.t[it.id];
+        save(SEL);var finished=full(SEL);
+        if(nw>cur&&it.id!=="wu"&&S.auto&&!finished)startTimer(S.rest);
+        rTop();rCal();rDay()};
+      sets.appendChild(sb)})(i);
+    r.appendChild(sets);
+    var inf=el("button","pill",EO[it.id]?"Скрыть":"Подробнее");inf.type="button";inf.style.marginTop="10px";inf.setAttribute("aria-expanded",!!EO[it.id]);
+    inf.onclick=function(){EO[it.id]=!EO[it.id];rDay()};
+    r.appendChild(inf);if(EO[it.id])r.appendChild(infoBox(it));b.appendChild(r)});
+  var c=cnt(SEL);b.appendChild(el("div","legend","Выполнено подходов: "+c[0]+" из "+c[1]+". Нажми на номер подхода, когда сделал его. Нажми ещё раз, чтобы отменить."))}
+
+function rRest(){
+  var b=$("rest");b.innerHTML="";b.appendChild(el("h2","h","Таймер отдыха"));
+  b.appendChild(el("div","sub","После каждого подхода таймер запускается сам. Отдых между подходами обычно 1–3 минуты."));
+  var c=el("div","chips");
+  [60,90,120,180].forEach(function(n){var x=el("button",null,fmt(n));x.type="button";x.setAttribute("aria-pressed",S.rest===n);x.onclick=function(){S.rest=n;save();rRest()};c.appendChild(x)});
+  var a=el("button",null,S.auto?"Авто: вкл":"Авто: выкл");a.type="button";a.setAttribute("aria-pressed",!!S.auto);a.onclick=function(){S.auto=!S.auto;save();rRest()};c.appendChild(a);
+  var go=el("button",null,"Запустить сейчас");go.type="button";go.onclick=function(){startTimer(S.rest)};c.appendChild(go);
+  b.appendChild(c)}
+
+var EX="A";
+function rExs(){
+  var b=$("exs");b.innerHTML="";b.appendChild(el("h2","h","Упражнения"));
+  b.appendChild(el("div","sub","Добавляй, убирай и меняй порядок. Прошлые отметки не пропадают."));
+  var c=el("div","chips");
+  ["A","B"].forEach(function(k){var x=el("button",null,"Тренировка "+(k==="A"?"А":"Б"));x.type="button";x.setAttribute("aria-pressed",EX===k);x.onclick=function(){EX=k;rExs()};c.appendChild(x)});
+  b.appendChild(c);
+  var list=S.w[EX];
+  if(!list.length)b.appendChild(el("div","rest","Пока пусто. Добавь упражнение ниже."));
+  list.forEach(function(it,i){
+    var r=el("div","lr"),sp=el("span",null,it.n+" "),sm=el("small",null,it.s+" × "+it.r);sp.appendChild(sm);r.appendChild(sp);
+    function mk(txt,fn,lab){var x=el("button",null,txt);x.type="button";x.setAttribute("aria-label",lab);x.onclick=fn;r.appendChild(x)}
+    mk("↑",function(){if(i>0){var t=list[i-1];list[i-1]=list[i];list[i]=t;save();rExs();rDay()}},"Выше");
+    mk("↓",function(){if(i<list.length-1){var t=list[i+1];list[i+1]=list[i];list[i]=t;save();rExs();rDay()}},"Ниже");
+    mk("✕",function(){list.splice(i,1);save();rExs();rDay();rCal();rTop()},"Удалить");
+    b.appendChild(r)});
+  b.appendChild(el("div","sec","Новое упражнение"));
+  var f=el("div","frm"),nm=el("input","fld"),ss=el("input","fld"),rp=el("input","fld"),ad=el("button","btn","Добавить");
+  nm.placeholder="Название";nm.style.flex="1 1 100%";ss.type="number";ss.inputMode="numeric";ss.placeholder="Подходов";ss.value="3";ss.style.width="110px";rp.placeholder="Повторений";rp.value="8–12";rp.style.width="130px";
+  nm.setAttribute("aria-label","Название");ss.setAttribute("aria-label","Подходов");rp.setAttribute("aria-label","Повторений");ad.type="button";
+  ad.onclick=function(){var n=nm.value.trim(),s=parseInt(ss.value,10);if(!n||!(s>0))return;addEx(n,s,rp.value.trim()||"—")};
+  f.appendChild(nm);f.appendChild(ss);f.appendChild(rp);f.appendChild(ad);b.appendChild(f);
+  var lb=el("details","lib");lb.appendChild(el("summary",null,"Выбрать из списка (ноги, грудь, спина, плечи, руки, пресс)"));
+  Object.keys(LIB).forEach(function(g){
+    lb.appendChild(el("div","sec",g));var cc=el("div","chips");
+    LIB[g].forEach(function(e){var x=el("button",null,e[0]);x.type="button";x.onclick=function(){addEx(e[0],+e[1],e[2])};cc.appendChild(x)});lb.appendChild(cc)});
+  b.appendChild(lb)}
+function addEx(n,s,r){S.w[EX].push({id:"e"+Date.now().toString(36)+Math.random().toString(36).slice(2,5),n:n,s:s,r:r});save();rExs();rDay();rCal();rTop()}
+
+function rSet(){
+  var b=$("set");b.innerHTML="";b.appendChild(el("h2","h","Дни тренировок"));
+  b.appendChild(el("div","sub","Сейчас вторник, четверг и один день выходных (суббота или воскресенье). Тренировки А и Б чередуются."));
+  var c=el("div","chips");
+  [1,2,3,4,5].forEach(function(n){var x=el("button",null,DN[n]);x.type="button";x.setAttribute("aria-pressed",S.days.indexOf(n)>-1);
+    x.onclick=function(){var i=S.days.indexOf(n);if(i>-1){if(S.days.length+(S.wk?1:0)>1)S.days.splice(i,1)}else S.days.push(n);save();rSet();rTop();rCal();SEL=typeOf(SEL)?SEL:nextTraining();rDay()};c.appendChild(x)});
+  var w=el("button",null,"Сб или Вс");w.type="button";w.setAttribute("aria-pressed",!!S.wk);
+  w.onclick=function(){if(S.wk&&!S.days.length)return;S.wk=!S.wk;save();rSet();rTop();rCal();SEL=typeOf(SEL)?SEL:nextTraining();rDay()};c.appendChild(w);
+  b.appendChild(c);
+  b.appendChild(el("div","legend","Данные и веса сохраняются на этом устройстве. Друг по ссылке получит свою чистую копию программы."));
+  var bkr=el("div","chips");
+  var expB=el("button",null,"Скопировать JSON");expB.type="button";
+  expB.onclick=function(){var txt=JSON.stringify(S);if(navigator.clipboard)navigator.clipboard.writeText(txt).then(function(){expB.textContent="Скопировано ✓";setTimeout(function(){expB.textContent="Скопировать JSON"},2000)});else prompt("Скопируй JSON:",txt)};
+  var impB=el("button",null,"Загрузить JSON");impB.type="button";
+  impB.onclick=function(){var raw=prompt("Вставь JSON тренировок:");if(!raw)return;try{var p=JSON.parse(raw);if(p&&p.w){S=p;save();rTop();rCal();rDay();rRest();rExs();rSet();alert("Загружено!")}}catch(e){alert("Ошибка в JSON")}};
+  bkr.appendChild(expB);bkr.appendChild(impB);b.appendChild(bkr);}
+function initSync(){
+  try{
+    if(!(window.claude&&claude.use))return;
+    Promise.all([claude.use("db"),claude.use("user")]).then(function(r){
+      var db=r[0],u=r[1];if(!db||!u)return null;
+      return u.id().then(function(id){
+        if(!id)return null;
+        SYNC.col=db.collection("data/users/"+id);
+        return SYNC.col.limit(1000).get().then(function(sn){
+          var cfg=null,days={};
+          sn.docs.forEach(function(d){
+            if(d.id==="gym_cfg")cfg=d.data();
+            else if(d.id.indexOf("gym_d_")===0)days[d.id.slice(6)]=d.data()});
+          if(cfg){
+            Object.keys(cfg).forEach(function(k){S[k]=cfg[k]});
+            Object.keys(days).forEach(function(d){if(!DIRTY[d])S.log[d]=days[d]});
+          }
+          Object.keys(S.log).forEach(function(d){if(!days[d]&&hasData(d))DIRTY[d]=1});
+          try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}
+          SYNC.ok=true;pushNow();
+          SEL=typeOf(TODAY)?TODAY:nextTraining();
+          rTop();rCal();rDay();rRest();rExs();rSet();
+        })})}).catch(noop)}catch(e){}}
+rTop();rCal();rDay();rRest();rExs();rSet();save();initSync();
+</script>
+</body>
+</html>
